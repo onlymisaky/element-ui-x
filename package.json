@@ -1,33 +1,45 @@
 {
   "name": "element-ui-x",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "private": true,
+  "main": "lib/index.umd.min.js",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "build:all-in-one": "vue-cli-service build --target lib --name index ./packages/index.ts --dest lib",
+    "build:single": "vue-cli-service build --target lib --name index",
+    "build": "npm run build:all-in-one && node ./scripts/build.js",
+    "lint": "vue-cli-service lint",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
   },
   "dependencies": {
-    "core-js": "^3.8.3",
-    "vue": "^2.6.14"
+    "core-js": "^3.33.3"
+  },
+  "peerDependencies": {
+    "element-ui": "^2.15.12",
+    "vue": "^2.6.14 || <3",
+    "vuepress": "^1.9.10"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.4.0",
-    "@typescript-eslint/parser": "^5.4.0",
-    "@vue/cli-plugin-babel": "~5.0.0",
-    "@vue/cli-plugin-eslint": "~5.0.0",
-    "@vue/cli-plugin-typescript": "~5.0.0",
-    "@vue/cli-service": "~5.0.0",
-    "@vue/eslint-config-airbnb": "^6.0.0",
-    "@vue/eslint-config-typescript": "^9.1.0",
-    "eslint": "^7.32.0",
-    "eslint-plugin-import": "^2.25.3",
-    "eslint-plugin-vue": "^8.0.3",
-    "eslint-plugin-vuejs-accessibility": "^1.1.0",
-    "lint-staged": "^11.1.2",
-    "sass": "^1.32.7",
-    "sass-loader": "^12.0.0",
-    "typescript": "~4.5.5",
+    "@typescript-eslint/eslint-plugin": "^6.13.1",
+    "@typescript-eslint/parser": "^6.13.1",
+    "@vue/cli-plugin-babel": "~5.0.8",
+    "@vue/cli-plugin-eslint": "~5.0.8",
+    "@vue/cli-plugin-typescript": "~5.0.8",
+    "@vue/cli-service": "~5.0.8",
+    "@vue/eslint-config-airbnb": "^7.0.1",
+    "@vue/eslint-config-typescript": "^12.0.0",
+    "eslint": "^8.54.0",
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-vue": "^9.19.2",
+    "eslint-plugin-vuejs-accessibility": "^2.2.0",
+    "lint-staged": "^15.1.0",
+    "sass": "^1.69.5",
+    "sass-loader": "^13.3.2",
+    "typescript": "~5.3.2",
     "vue-template-compiler": "^2.6.14"
   },
   "gitHooks": {

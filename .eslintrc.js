@@ -1,5 +1,15 @@
-module.exports = {
+/** @typedef {import('eslint').Linter.Config} */
+const eslintConfig = {
   root: true,
+  ignorePatterns: [
+    'lib',
+    'vue.config.js',
+    'lint-staged.config.js',
+    'babel.config.js',
+    'scripts/build.js',
+    'docs/.vuepress/config.js',
+    'docs/.vuepress/enhanceApp.js',
+  ],
   env: {
     node: true,
   },
@@ -14,5 +24,13 @@ module.exports = {
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    'linebreak-style': 'off',
+    'import/prefer-default-export': 'off',
+    'import/no-unresolved': 'off',
+    'import/extensions': 'off',
+    '@typescript-eslint/no-empty-interface': 'off',
+    '@typescript-eslint/no-unused-vars': 'warn',
   },
 };
+
+module.exports = eslintConfig;

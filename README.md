@@ -1,4 +1,4 @@
-# element-ui-x
+# clue-compnents
 
 ## Project setup
 ```
